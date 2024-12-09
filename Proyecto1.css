@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+header .cart button {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+}
+
+
+
+
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    overflow: hidden; /* Asegura que el contenido no se salga de la tarjeta */
+    position: relative; /* Necesario para el control de la imagen en el hover */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Altura fija para mantener las tarjetas uniformes */
+    transition: transform 0.4s ease-in-out; /* Transición suave para el movimiento */
+}
+
+/* Efecto de imagen al pasar el cursor */
+.product-card img {
+    width: 100%;
+    height: 200px; /* Tamaño fijo para la imagen */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para el zoom y el sobreado */
+}
+
+/* Aumenta el tamaño de la imagen y agrega sombra al pasar el cursor */
+.product-card:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para el sobreado */
+}
+
+/* Opcional: Puedes añadir un pequeño movimiento de la tarjeta completa */
+.product-card:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+}
+
+/* Estilo para los elementos dentro de la tarjeta */
+.product-card .product-info {
+    flex-grow: 1; /* Asegura que la descripción y el precio ocupen el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #2d6a4f; /* Color verde para los textos */
+}
+
+/* Título de la tarjeta */
+.product-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #2d6a4f; /* Color verde */
+}
+
+/* Precio de la tarjeta */
+.product-card .price {
+    font-size: 1.2em;
+    color: #2d6a4f; /* Color verde */
+    margin-bottom: 15px;
+}
+
+/* Estilo del botón */
+.product-card button {
+    background-color: #2d6a4f; /* Botón verde */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: auto; /* Asegura que el botón esté alineado al final */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Efecto hover del botón */
+.product-card button:hover {
+    background-color: #1f4d36; /* Color más oscuro de verde cuando se pasa el cursor */
+}
+
+/* Estilos del modal del carrito */
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cart-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.cart-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.cart-content li {
+    margin-bottom: 10px;
+}
+
+.cart-content button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.cart-content button:hover {
+    background-color: #218838;
+}
+
+.cart-content .remove-button {
+    background-color: #28a745;  /* Verde */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.cart-content .remove-button:hover {
+    background-color: #218838;
+}
+.cart-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer .contact-info {
+    margin-top: 15px;
+    display: flex; /* Usamos Flexbox para organizar los elementos en una fila */
+    justify-content: center; /* Alinea los elementos al centro */
+    gap: 20px; /* Espacio entre los elementos de la fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en filas si el espacio es insuficiente */
+}
+
+footer .contact-info h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+footer .contact-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Usamos Flexbox dentro de la lista para que los elementos estén en fila */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+footer .contact-info ul li {
+    margin: 0; /* Quitamos el margen vertical de cada elemento */
+}
+
+footer .contact-info a {
+    color: #f8f9f8; /* Color de texto */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 50px; /* Bordes redondeados */
+   /* background-color: #fff; /* Fondo blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
+}
+
+footer .contact-info a:hover {
+    background-color: #28a745; /* Fondo verde cuando el cursor está encima */
+    color: white; /* Color blanco en el texto cuando está en hover */
+}
+
+footer .map-container {
+    margin-top: 20px; /* Espacio entre la información de contacto y el mapa */
+}
+
+footer .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
